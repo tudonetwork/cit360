@@ -102,15 +102,27 @@ public class ThreadsExecutorsRunnables {
 	        	            System.out.println("- " + site + " / Status: " + desc + " ("+ time +")");
 
 	        	        } catch (ParseException e) {
-	        	            e.printStackTrace();
+	        	        	
+	        	        	System.out.println("Error while parsing to JSON. "+ e.getMessage());
+	     	               // Error
 	        	        }
-	                   
+	        	      
+	                  default:
+	                	  
+	                	  System.out.println("Something went wrong in your HTTP request.");
+	     	              // Error
 	                }
 	                
 	            } catch (MalformedURLException ex) {
+	            	
+	            	System.out.println("Malformed URL Error!");
 	               // Error
+	            	
 	            } catch (IOException ex) {
+	            	
+	            	System.out.println("Something went wrong."+ ex.getMessage());
 	               // Error
+	            	
 	            } finally {
 	              // finally
 	            }
